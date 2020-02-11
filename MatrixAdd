@@ -1,0 +1,29 @@
+X = [[3,2,1],
+    [5 ,5,5],
+    [9 ,8,9]]
+Y = [[2,8,1],
+    [3,0,3],
+    [4,4,0]]
+
+def SimpleMatAdd(X,Y): #native method to add two matrices of same XY
+    #and returns as lines of rows (strings)
+    #but it only works for 3 x 3 at the moment 
+    row_num = len(X)#int(input("Input number of rows: "))
+    col_num = len(Y)#int(input("Input number of columns: "))
+    multi_list = [[0 for col in range(col_num)] for row in range(row_num)]
+    #the above generates the empty matrix to populate
+
+    for row in range(row_num):
+        for col in range(col_num):
+            multi_list[row][col]= 0
+
+    # iterate through rows
+    for i in range(len(X)):
+       # iterate through columns
+       for j in range(len(X[0])):
+           multi_list[i][j] = X[i][j] + Y[i][j]
+    for r in multi_list:
+       print(r)
+    #return multi_list
+    
+SimpleMatAdd(X,Y)
